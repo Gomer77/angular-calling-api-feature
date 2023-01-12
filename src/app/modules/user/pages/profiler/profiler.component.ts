@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../../models/user';
 import { Profile } from '../../models/profile';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-profiler',
@@ -12,9 +13,7 @@ export class ProfilerComponent {
 
   user: User = new Profile();
 
-  addUser(): void {
-    this.users.push(this.user);
-    this.user = new Profile();
-    console.log(this.users);
+  onSubmit = (userForm: NgForm) => {
+    console.log(userForm.value)
   }
 }

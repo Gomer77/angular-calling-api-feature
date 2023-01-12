@@ -1,30 +1,26 @@
 <p>Form</p>
 <div>
-    <form>
-        <table>
-            <tr>
-                <td><label for="name">Name: </label></td>
-                <td><input type="text" id="name" name="name"[(ngModel)]="user.name"/></td>
-            </tr>
-            <tr>
-                <td><label for="email">Email Address: </label></td>
-                <td><input type="text" id="email" name="email" [(ngModel)]="user.email"/></td>
-            </tr>
-            <tr>
-                <td><label for="bio">Bio: </label></td>
-                <td><input type="text" id="bio" name="bio" [(ngModel)]="user.bio"/></td>
-            </tr>
-            <tr>
-                <td><label for="active">Active: </label></td>
-                <td><input type="checkbox" id="active" name="active" [(ngModel)]="user.active"/></td>
-            </tr>
-        </table>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input [(ngModel)]="user.email" name="email" required/>
+      </div>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input [(ngModel)]="user.name" name="name" required/>
+      </div>
+      <div class="form-group">
+        <label for="bio">Bio:</label>
+        <input [(ngModel)]="user.bio" name="bio" #name="ngModel" required/>
+      </div>
+      <div class class="form-group">
+        <label for="active">Active:</label>
+        <select [(ngModel)]="user.active" name="active" #name="ngModel" type="checkbox" required>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+      </div>
         <br>
-        <button type="submit" (click)="addUser()">Submit</button>
-        <button type="reset">Reset</button>
+        <button type="submit" [disabled]="userForm.invalid">Submit</button>
     </form>
-
-</div>
-<div>
-
 </div>
