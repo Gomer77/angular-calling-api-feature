@@ -1,0 +1,31 @@
+<div *ngIf="blog">
+  <table>
+      <tr>
+          <td>ID: </td>
+          <td>{{blog.id}}</td>
+      </tr>
+      <tr>
+          <td>Title: </td>
+          <td>{{blog.title}}</td>
+      </tr>
+      <tr>
+          <td>Description: </td>
+          <td>{{blog.description}}</td>
+      </tr>
+      <tr>
+          <td>Author: </td>
+          <td>{{blog.author}}</td>
+      </tr>
+      <tr>
+          <td>Comments: </td>
+          <td>
+              <span *ngFor="let comment of blog.comments">
+                  {{comment}} <br>
+              </span>
+          </td>
+      </tr>
+  </table>
+</div>
+<button (click)="editBlog()">Edit</button>
+<button (click)="deleteBlog()">Delete</button>
+<br><br>

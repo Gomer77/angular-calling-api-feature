@@ -1,0 +1,30 @@
+<p>Form</p>
+<div>
+    <form>
+        <table>
+            <tr>
+                <td><label for="name">Name: </label></td>
+                <td><input type="text" id="name" name="name"[(ngModel)]="user.name"/></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email Address: </label></td>
+                <td><input type="text" id="email" name="email" [(ngModel)]="user.email"/></td>
+            </tr>
+            <tr>
+                <td><label for="bio">Bio: </label></td>
+                <td><input type="text" id="bio" name="bio" [(ngModel)]="user.bio"/></td>
+            </tr>
+            <tr>
+                <td><label for="active">Active: </label></td>
+                <td><input type="checkbox" id="active" name="active" [(ngModel)]="user.active"/></td>
+            </tr>
+        </table>
+        <br>
+        <button type="submit" (click)="addUser()">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+</div>
+<div>
+
+</div>
