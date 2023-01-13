@@ -15,7 +15,7 @@ export class BookService {
     {
       id: 2,
       name: 'The Godfather',
-      authors: ['J.R.R. Tolkien', 'George'],
+      authors: ['J.R.R. Tolkien', 'Mario Puzo'],
       isbn: '987654321'
     }
   ]

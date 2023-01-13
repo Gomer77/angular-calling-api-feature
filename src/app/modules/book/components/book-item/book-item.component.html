@@ -1,29 +1,11 @@
 <div *ngIf="book">
-  <table>
-      <tr>
-          <td>ID: </td>
-          <td>{{book.id}}</td>
-      </tr>
-      <tr>
-          <td>Name: </td>
-          <td>{{book.name}}</td>
-      </tr>
-      <tr>
-          <td>Authors: </td>
-          <td>
-              <span *ngFor="let author of book.authors">
-                  {{author}} <br>
-              </span>
-          </td>
-      </tr>
-      <tr>
-          <td>ISBN: </td>
-          <td>{{book.isbn}}</td>
-      </tr>
-  </table>
-</div>
-<div>
+  ID: {{book.id}}<br/>
+  Name: {{book.name}}<br/>
+  Author/s:
+  <span *ngFor="let author of book.authors"><br/>{{author}}</span><br/>
+  ISBN: {{book.isbn}}<br/>
   <button (click)="editBook()">Edit</button>
   <button (click)="deleteBook()">Delete</button>
+  <br/><br/>
 </div>
-<br>
+
