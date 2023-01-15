@@ -23,4 +23,12 @@ export class BookService {
     return this.books
   }
 
+  deleteBook(id: number): void {
+    this.books.splice(id, 1);
+  }
+
+  deleteAll():void {
+    this.books = [];
+  }
+
 }

@@ -12,12 +12,15 @@ export class BookItemComponent {
   @Output() delete = new EventEmitter();
 
   editBook(): void {
-      this.edit.emit(this.book);
-
+    if(this.book) {
+      this.edit.emit(this.book.id);
+    }
  }
 
   deleteBook() : void {
+    if(this.book) {
       this.delete.emit(this.book);
   }
 }
 
+}

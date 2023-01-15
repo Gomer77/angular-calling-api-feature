@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../models/book';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
@@ -10,7 +11,7 @@ import { Book } from '../../models/book';
 export class BookListComponent implements OnInit {
   books: Book[] = []
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getBooks();
@@ -21,11 +22,19 @@ export class BookListComponent implements OnInit {
   }
 
   edit(id: number): void {
-    console.log('edit', id)
+    this.router.navigate(['form', id], {relativeTo: this.route})
   }
 
   delete(id: number): void {
-    console.log('delete', id)
+    this.bookService.deleteBook(id)
+  }
+
+  add(): void {
+    this.router.navigate(['form'], {relativeTo: this.route})
+  }
+
+  deleteAll(): void {
+    this.bookService.deleteAll()
   }
 
 }

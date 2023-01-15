@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-command-bar',
@@ -8,21 +7,17 @@ import { Router } from '@angular/router';
 })
 export class CommandBarComponent {
 
-  constructor(private router: Router){}
-  
-  add(){
-    let url = this.router.url
-    if(url === '/book'){
-      this.router.navigate(['/book/form']);
-    }else if(url === '/blog'){
-      this.router.navigate(['/blog/form']);
-    }else{
-      this.router.navigate(['/profile/form']);
-    }
+  @Output() add = new EventEmitter();
+  @Output() deleteAll = new EventEmitter();
+
+  addItem(): void {
+    this.add.emit()
   }
-  
-  deleteAll(){
-    
+
+  deleteAllItems(): void {
+    this.deleteAll.emit()
   }
+
+  
   
 }

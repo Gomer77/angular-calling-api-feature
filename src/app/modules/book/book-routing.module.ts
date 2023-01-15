@@ -7,11 +7,15 @@ import { BookFormComponent } from './pages/book-form/book-form.component';
 const routes: Routes = [
   {
     path: '',
-    component: BookListComponent
+    component: BookListComponent,
+  },
+  {
+    path: 'form/:id',
+    component: BookFormComponent,
   },
   {
     path: 'form',
-    component: BookFormComponent
+    component: BookFormComponent,
   }
 ]
 

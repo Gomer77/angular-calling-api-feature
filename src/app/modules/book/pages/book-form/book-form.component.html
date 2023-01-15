@@ -1,3 +1,14 @@
-<form [formGroup]="bookForm">
-
+<form [formGroup]="bookForm" class="container">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control" formControlName="name"/>
+    </div>
+    <div class="form-group">
+        <label for="author">Author</label>
+        <input class="form-control" formControlName="author"/>
+    </div>
+    <div class="form-group">
+        <label for="isbn">ISBN</label>
+        <input class="form-control" formControlName="isbn"/>
+    </div>
 </form>
