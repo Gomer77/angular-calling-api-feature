@@ -1,0 +1,29 @@
+<form [formGroup]="blogForm" class="container" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Title:</label>
+        <input class="form-control" formControlName="title"/>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input class="form-control" formControlName="description"/>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="author">Author:</label>
+        <input class="form-control" formControlName="author"/>
+    </div>
+    <br><br>
+    <ng-container formArrayName="comments">
+        <label for="comments">Comments:</label>
+        <div class="form-group" *ngFor="let _ of commentsArray.controls; index as i">
+            <input [formControlName]="i" class="form-control">
+            <button type="button" (click)="deleteComment(i)">Delete</button>
+        </div>
+        <button type="button" (click)="addComment()">Add Comment</button>
+    </ng-container>
+    <br><br>
+    <button type="button" (click)="clear()">Clear</button>
+    <button type="submit">Submit</button>
+</form>
+

@@ -12,10 +12,14 @@ export class BlogItemComponent {
   @Output() delete = new EventEmitter();
 
   editBlog(): void {
+    if(this.blog) {
     this.edit.emit(this.blog);
+    }
   }
 
   deleteBlog(): void {
+    if(this.blog) {
     this.delete.emit(this.blog);
+    }
   }
 }

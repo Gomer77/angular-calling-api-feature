@@ -1,26 +1,27 @@
 <p>Form</p>
 <div>
-    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <form [formGroup]="profileForm" class="container" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="email">Email:</label>
-        <input [(ngModel)]="user.email" name="email" required/>
+        <input class="form-control" formControlName="email" required/>
       </div>
       <div class="form-group">
         <label for="name">Name:</label>
-        <input [(ngModel)]="user.name" name="name" required/>
+        <input class="form-control" formControlName="name" required/>
       </div>
       <div class="form-group">
         <label for="bio">Bio:</label>
-        <input [(ngModel)]="user.bio" name="bio" #name="ngModel" required/>
+        <input class="form-control" formControlName="bio" required/>
       </div>
       <div class class="form-group">
         <label for="active">Active:</label>
-        <select [(ngModel)]="user.active" name="active" #name="ngModel" type="checkbox" required>
+        <select class="form-control" formControlName="active" type="checkbox" required>
         <option value="true">True</option>
         <option value="false">False</option>
       </select>
       </div>
         <br>
-        <button type="submit" [disabled]="userForm.invalid">Submit</button>
+        <button type="button" (click)="clear()">Clear</button>
+        <button type="submit" [disabled]="profileForm.invalid">Submit</button>
     </form>
 </div>

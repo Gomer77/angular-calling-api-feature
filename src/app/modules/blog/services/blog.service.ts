@@ -24,4 +24,32 @@ export class BlogService {
   getBlog(): Blog[] {
     return this.blog
   }
+
+  updateBlog(blog: Blog): void {
+    this.blog.forEach(blogHere => {
+      if (blogHere.id === blog.id) {
+        blogHere.title = blog.title
+        blogHere.description = blog.description
+        blogHere.author = blog.author
+        blogHere.comments = blog.comments
+      }
+    })
+  }
+
+  returnBlog(idFind: number): Blog{
+    return this.blog[idFind-1]
+  }
+
+  deleteBlog(id: number): void {
+    this.blog.splice(id, 1);
+  }
+
+  deleteAll():void {
+    this.blog = []
+  }
+
+  generateBlogId():number {
+    let length = this.blog.length
+    return length + 1
+  }
 }

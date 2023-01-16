@@ -21,20 +21,20 @@ export class BookListComponent implements OnInit {
     this.books = this.bookService.getBook()
   }
 
+  add(): void {
+    this.router.navigate(['form'], {relativeTo: this.route})
+  }
+
+  deleteAll(): void {
+    this.books = []
+  }
+
   edit(id: number): void {
     this.router.navigate(['form', id], {relativeTo: this.route})
   }
 
   delete(id: number): void {
     this.bookService.deleteBook(id)
-  }
-
-  add(): void {
-    this.router.navigate(['form'], {relativeTo: this.route})
-  }
-
-  deleteAll(): void {
-    this.bookService.deleteAll()
   }
 
 }

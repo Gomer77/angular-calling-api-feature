@@ -13,7 +13,7 @@ export class BookItemComponent {
 
   editBook(): void {
     if(this.book) {
-      this.edit.emit(this.book.id);
+      this.edit.emit(this.book);
     }
  }
 

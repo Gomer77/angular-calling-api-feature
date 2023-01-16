@@ -10,11 +10,11 @@ const routes: Routes = [
     component: BookListComponent,
   },
   {
-    path: 'form/:id',
+    path: 'form',
     component: BookFormComponent,
   },
   {
-    path: 'form',
+    path: 'form/:id',
     component: BookFormComponent,
   }
 ]
