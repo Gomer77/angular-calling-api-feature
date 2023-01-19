@@ -5,8 +5,8 @@
     Author: {{blog.author}}<br/>
     Comment/s:
     <span *ngFor="let comment of blog.comments"><br/>"{{comment}}"</span><br/>
-    <button (click)="editBlog()">Edit</button>
-    <button (click)="deleteBlog()">Delete</button>
+    <button (click)="editBlog(blog.id)">Edit</button>
+    <button (click)="deleteBlog(blog.id)">Delete</button>
     <br/><br/>
 </div>
 

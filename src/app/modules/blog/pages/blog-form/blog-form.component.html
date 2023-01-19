@@ -1,6 +1,11 @@
 <form [formGroup]="blogForm" class="container" (ngSubmit)="onSubmit()">
     <div class="form-group">
-        <label for="name">Title:</label>
+        <label for="id">Id:</label>
+        <input class="form-control" formControlName="id"/>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="title">Title:</label>
         <input class="form-control" formControlName="title"/>
     </div>
     <br>

@@ -1,32 +1,37 @@
 {
-    "blogs": [
-        {
-            "id": 1,
-            "title": "Angular",
-            "description": "This is Angular blog post",
-            "author": "John Doe",
-            "comments": ["Very Hard", "Very Easy"]
-          },
-          {
-            "id": 2,
-            "title": "React",
-            "description": "This is React blog post",
-            "author": "Google",
-            "comments": ["Very Hard", "Very Easy"]
-          }
-    ],
-    "books": [
-        {
-            "id": 1,
-            "name": "The Lord of the Rings",
-            "authors": ["J.R.R. Tolkien"],
-            "isbn": 1234567890
-        },
-        {
-            "id": 2,
-            "name": "The Godfather",
-            "authors": ["J.R.R. Tolkien", "Mario Puzo"],
-            "isbn": 987654321
-        }
-    ]
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Angular",
+      "description": "This is Angular blog post",
+      "author": "John Doe",
+      "comments": ["Very Hard", "Very Easy"]
+},
+{
+      "id": 2,
+      "title": "React",
+      "description": "This is React blog post",
+      "author": "Google",
+      "comments": ["Very Hard", "Very Easy"]
+}
+  ],
+  "books": [
+    {
+      "id": 1,
+      "name": "The Lord of the Rings",
+      "authors": [
+        "J.R.R. Tolkien"
+      ],
+      "isbn": 1234567890
+    },
+    {
+      "id": 2,
+      "name": "The Godfather",
+      "authors": [
+        "J.R.R. Tolkien",
+        "Mario Puzo"
+      ],
+      "isbn": 987654321
+    }
+  ]
 }
