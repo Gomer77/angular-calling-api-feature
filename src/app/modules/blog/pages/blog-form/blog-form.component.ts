@@ -18,7 +18,7 @@ export class BlogFormComponent implements OnInit, OnDestroy{
   sub: Subscription | undefined
 
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, 
+  constructor(private fb: FormBuilder, private route: ActivatedRoute,
     private blogService: BlogService, private router: Router) {
     this.blogForm = this.fb.group({
       id: [],
@@ -42,7 +42,7 @@ export class BlogFormComponent implements OnInit, OnDestroy{
       console.log(myBlog)
     }
     this.router.navigate(['blog'])
-  } 
+  }
 
   addComment = () => {
     this.commentsArray.push(this.fb.control(''))
@@ -50,11 +50,6 @@ export class BlogFormComponent implements OnInit, OnDestroy{
 
   deleteComment = (i:number) => {
     this.commentsArray.removeAt(i)
-  }
-
-  clear = () => {
-    this.blogForm.reset()
-    this.commentsArray.clear()
   }
 
   ngOnDestroy(): void {
@@ -90,4 +85,9 @@ export class BlogFormComponent implements OnInit, OnDestroy{
   //     this.commentsArray.push(this.fb.control(comment))
   //   }
   // }
+
+  clear = () => {
+    this.blogForm.reset()
+    this.commentsArray.clear()
+  }
 }

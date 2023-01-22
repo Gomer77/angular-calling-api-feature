@@ -1,5 +1,10 @@
 <form [formGroup]="bookForm" class="container" (ngSubmit)="onSubmit()">
-    <div class="form-group">
+  <div class="form-group">
+    <label for="id">Id:</label>
+    <input class="form-control" formControlName="id" />
+  </div>
+  <br>
+  <div class="form-group">
         <label for="name">Name:</label>
         <input class="form-control" formControlName="name"/>
     </div>

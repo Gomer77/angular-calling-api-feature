@@ -4,8 +4,8 @@
   Author/s:
   <span *ngFor="let author of book.authors"><br/>{{author}}</span><br/>
   ISBN: {{book.isbn}}<br/>
-  <button (click)="editBook()">Edit</button>
-  <button (click)="deleteBook()">Delete</button>
+  <button (click)="editBook(book.id)">Edit</button>
+  <button (click)="deleteBook(book.id)">Delete</button>
   <br/><br/>
 </div>
 

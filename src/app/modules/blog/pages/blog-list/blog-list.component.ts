@@ -32,9 +32,8 @@ export class BlogListComponent implements OnInit, OnDestroy {
     this.router.navigate(['form'], {relativeTo: this.route})
   }
 
-  //DELETE /blogs
   deleteAll(): void {
-    this.blogs = []    
+    this.blogs = []
     this.router.navigate(['blog'])
   }
 
